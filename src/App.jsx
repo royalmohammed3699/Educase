@@ -200,21 +200,23 @@ function App() {
               </p>
             </div>
             
-            <button 
-              type="button" 
-              className="btn btn-primary"
-              onClick={() => setScreen('register')}
-            >
-              Create Account
-            </button>
-            
-            <button 
-              type="button" 
-              className="btn btn-secondary"
-              onClick={() => setScreen('login')}
-            >
-              Already Registered? Login
-            </button>
+            <div className="landing-buttons">
+              <button 
+                type="button" 
+                className="btn btn-primary"
+                onClick={() => setScreen('register')}
+              >
+                Create Account
+              </button>
+              
+              <button 
+                type="button" 
+                className="btn btn-secondary"
+                onClick={() => setScreen('login')}
+              >
+                Already Registered? Login
+              </button>
+            </div>
           </div>
         </div>
       )}
