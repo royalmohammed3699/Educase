@@ -1,0 +1,294 @@
+/* App Screen Layout Container */
+.app-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: var(--bg-app);
+}
+
+.screen-content {
+  flex: 1;
+  padding: 30px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Scrollbar styling */
+.screen-content::-webkit-scrollbar {
+  width: 4px;
+}
+.screen-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+/* Landing/Welcome Screen Layout */
+.landing-content {
+  justify-content: flex-end;
+  padding-bottom: 40px;
+}
+
+.landing-text-group {
+  margin-bottom: auto;
+  margin-top: 120px;
+}
+
+/* Common Typography */
+.screen-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 10px 0;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.screen-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0 0 35px 0;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Input Fields (Floating Outlined Design) */
+.floating-input-group {
+  position: relative;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.floating-input-group input {
+  width: 100%;
+  padding: 16px 14px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+  font-family: var(--sans-font);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus and active input states */
+.floating-input-group input:focus {
+  border-color: var(--border-focus);
+}
+
+/* Label styling */
+.floating-input-group label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  font-size: 14px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  background-color: transparent;
+  padding: 0 4px;
+}
+
+/* Floating behavior when active or focused */
+.floating-input-group.active label,
+.floating-input-group input:focus ~ label {
+  top: 0;
+  font-size: 11px;
+  color: var(--primary-color);
+  background-color: var(--bg-app);
+  font-weight: 500;
+}
+
+.floating-input-group.active input {
+  border-color: var(--border-focus);
+}
+
+/* Asterisk color */
+.required-star {
+  color: var(--error-color);
+}
+
+/* Validation error text */
+.error-msg {
+  font-size: 11px;
+  color: var(--error-color);
+  text-align: left;
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+/* Custom Radio Selection for Agency */
+.agency-selection-label {
+  font-size: 14px;
+  color: var(--text-primary);
+  text-align: left;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.radio-group {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 25px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-option input[type="radio"] {
+  accent-color: var(--primary-color);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Button Styles */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans-font);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  margin-top: auto; /* Pushes button to bottom of screen content if flexed */
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  background-color: #cbcbcb;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text);
+  margin-top: 12px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* Profile Screen Styling */
+.profile-header {
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ececec;
+  text-align: left;
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.profile-details-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 20px;
+}
+
+.avatar-container {
+  position: relative;
+  width: 76px;
+  height: 76px;
+}
+
+.profile-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #e2e8f0;
+}
+
+.camera-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid #ffffff;
+  cursor: pointer;
+}
+
+.camera-icon {
+  width: 11px;
+  height: 11px;
+  fill: currentColor;
+}
+
+.profile-info {
+  text-align: left;
+}
+
+.profile-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.profile-email {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.profile-bio {
+  font-size: 13px;
+  color: #1d2226;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+.profile-divider {
+  margin: 24px 20px;
+  border: none;
+  border-top: 1px dashed var(--border-color);
+}
+
+.hidden-file-input {
+  display: none;
+}
+

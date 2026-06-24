@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #6c25e8;
+  --primary-hover: #571bc2;
+  --secondary-bg: #ece6fd;
+  --secondary-text: #1d2226;
+  --secondary-hover: #e0d6fc;
+  
+  --bg-app: #f9f9f9;
+  --bg-page: #f2f1f5;
+  --text-primary: #1d2226;
+  --text-secondary: #7d8287;
+  --border-color: #cbcbcb;
+  --border-focus: #6c25e8;
+  --error-color: #d32f2f;
+  
+  --sans-font: 'Poppins', system-ui, -apple-system, sans-serif;
+  
+  font-size: 16px;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--sans-font);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* App Container (Borderless & responsive) */
+.phone-simulator {
+  width: 100%;
+  max-width: 500px;
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+
